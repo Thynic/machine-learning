@@ -73,10 +73,10 @@ while True:
             distance = ((cX - x)**2 + (cY - y)**2)**1/2
             distance2 = ((cX - xb)**2 + (cY - yb)**2)**1/2
 
-            if (j != 0) and (cY != yb and cX != xb and cX != x and cY != y): #zerodivision'dan gaçın
+            if (j != 0) and (cY != yb and cX != xb and cX != x and cY != y): #zerodivision önleme
                 m1 = ((cY - yb) / (cX - xb))
                 m2 = ((cY - y) / (cX - x))
-                if (m1 != m2) and (m1 != 0 and m2 != 0) and (m1 * m2 != -1): #zerodivision'dan gaçın
+                if (m1 != m2) and (m1 != 0 and m2 != 0) and (m1 * m2 != -1): #zerodivision önleme
                     angle = (m1 - m2) / (1 + (m1 * m2)) #iki doğru arasındaki açının tanjantı
                     if (angle**-1 < 60) and (angle**-1 > 55): #tanjanttan açıyı almak
                         cv2.line(result, (cX, cY), (x, y), (255, 0, 0), 2)
